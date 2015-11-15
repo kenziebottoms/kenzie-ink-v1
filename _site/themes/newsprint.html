@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            NEWSPRINT theme
+            judgmentalgiraffe.com
+            Updated 2/17/2013
+        !-->
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+        
+            @font-face {
+                src: url("https://dl.dropbox.com/s/dcdbhydqq2oecr3/CloisterBlack.ttf?dl=1");
+                font-family: gothic;
+            }
+        
+            body {
+                margin: auto;
+                font-family: georgia, serif;
+                font-size: 9pt;
+                background: #e5e5e5;
+                text-align: center;
+                color: #333;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+            h1, h2, h3, h4 {
+                font-weight: normal;
+                text-align: right;
+                line-height: 1.3em;
+                padding: 0;
+                font-family: impact, serif;
+                text-transform: uppercase;
+            }
+            h3 a {
+                color: #333 !important;
+            }
+            h4 a {
+                color: #333 !important;
+            }
+            h1 {
+                font-size: 2.6em;
+            }
+            h2 {
+                font-size: 2.3em;
+            }
+            h3 {
+                font-size: 2em;
+            }
+            h4 {
+                font-size: 1.7em;
+            }
+            
+            #header {
+                width: 90%;
+                margin: 30px auto;
+                text-align: center;
+            }
+                #headline {
+                    font-family: gothic, impact, serif;
+                    font-size: 10em;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+                #desc {
+                    font-family: georgia, serif;
+                    font-size: 1.3em;
+                    margin: 0 auto 1em auto;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+                ul#menu {
+                    width: 90%;
+                    list-style-type: none;
+                    padding: 5px;
+                    margin: 1em auto 0 15px;
+                    font-family: georgia, serif;
+                    font-size: 2.5em;
+                    text-transform: uppercase;
+                    border-bottom: 1px solid black;
+                    border-top: 1px solid black;
+                    text-align: left;
+                }
+                #menu li {
+                    display: inline;
+                }
+            #posts {
+                width: 908px;
+                margin: auto auto 50px auto;
+                text-align: center;
+            }
+                .post {
+                    line-height: 1em;
+                }
+                .post a {
+                    color: #666;
+                }
+                .post a:hover {
+                    color: #333;
+                }
+                    #postbody {
+                        text-align: justify;
+                    }
+                    #tags {
+                        padding: 5px;
+                        font-size: .9em;
+                        color: #999;
+                    }
+                    #tags a {
+                        color: #999;
+                    }
+                    #tags a:hover {
+                        color: #aaa;
+                    }
+                #notes {
+                    font-size: .9em;
+                    color: #666;
+                    text-align: left;
+                    width: 400px;
+                    margin: auto;
+                }
+                #notes ol {
+                    list-style-type: none;
+                }
+            #pagination {
+                font-size: .9em;
+                position: fixed;
+                right: 20px;
+                top: 30%;
+            }
+            
+            .title, .date {
+                margin: 0;
+                padding: 0;
+            }
+            .quote {
+                font-size: 1.8em;
+                line-height: 110%;
+                font-weight: bold;
+            }
+            ul.chat {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .source {
+                text-align: right;
+            }
+            .pagination {
+                font-weight: bold;
+                font-size: 8em;
+                color: #888;
+            }
+            .pagination:hover {
+                color: #333;
+            }
+            .right {
+                text-align: right;
+            }
+        
+            {block:IndexPage}
+                .post {
+                    width: 250px;
+                    float: left;
+                    margin: 30px 20px;
+                }
+                .post img {
+                    max-width: 250px;
+                    height: auto;
+                }
+            {/block:IndexPage}
+            {block:PermalinkPage}
+                .post {
+                    width: 500px;
+                    padding: 0;
+                    margin: auto;
+                }
+            {/block:PermalinkPage}
+        
+        </style>
+        {block:IndexPage}
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+            <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
+            <script type="text/javascript">
+
+                $(window).load(function(){
+                    $('#posts').masonry({
+                        itemSelector: '.post',
+                        columnWidth: 250
+                    });
+                });
+
+            </script>
+        {/block:IndexPage}
+    </head>
+    <body>
+        <div id="header">
+            <a id="headline" href="/">{Title}</a>
+
+            {block:Description}
+                <p id="desc">{Description}</p>
+            {/block:Description}
+
+            <ul id="menu">
+                <a href="/">
+                    <li>home&nbsp;&nbsp;</li>
+                </a>
+                {block:AskEnabled}
+                    <a href="/ask">
+                        <li>ask&nbsp;&nbsp;</li>
+                    </a>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                    <a href="/submit">
+                        <li>submit&nbsp;&nbsp;</li>
+                    </a>
+                {/block:SubmissionsEnabled}
+                {block:HasPages}
+                    {block:Pages}
+                        <a href="{URL}">
+                            <li>{Label}&nbsp;&nbsp;</li>
+                        </a>
+                    {/block:Pages}
+                {/block:HasPages}
+                <a href="/archive">
+                    <li>archive&nbsp;&nbsp;</li>
+                </a>
+                <a href="/rss">
+                    <li>rss&nbsp;&nbsp;</li>
+                </a>
+                <a href="http://www.judgmentalgiraffe.com/">
+                    <li>theme</li>
+                </a>
+            </ul>
+        </div>
+
+        <div id="posts">
+            {block:Posts}
+                <div class="post">
+
+                    <div id="postbody">
+                        {block:Text}
+                            {block:Title}
+                                <h3 class="title"><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            {Body}
+                        {/block:Text}
+
+                        {block:Photo}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            {block:IndexPage}
+                                <p><img src="{PhotoURL-250}" alt="{PhotoAlt}"/></p>
+                            {/block:IndexPage}
+                            {block:PermalinkPage}
+                                <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                            {/block:PermalinkPage}
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            {block:IndexPage}
+                                <p>{Photoset-250}</p>
+                            {/block:IndexPage}
+                            {block:PermalinkPage}
+                                <p>{Photoset-500}</p>
+                            {/block:PermalinkPage}
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photoset}
+
+                        {block:Quote}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            <p class="quote">{Quote}</p>
+                            {block:Source}
+                                <p class="source">&mdash; {Source}</p>
+                            {/block:Source}
+                        {/block:Quote}
+
+                        {block:Link}
+                            <h3 class="title"><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            {block:Description}
+                                {Description}
+                            {/block:Description}
+                        {/block:Link}
+
+                        {block:Chat}
+                            {block:Title}
+                                <h3 class="title"><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            <p>
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                            </p>
+                        {/block:Chat}
+
+                        {block:Video}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            {block:IndexPage}
+                                <p>{Video-250}</p>
+                            {/block:IndexPage}
+                            {block:PermalinkPage}
+                                <p>{Video-500}</p>
+                            {/block:PermalinkPage}
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Video}
+
+                        {block:Audio}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            <p>{AudioPlayerBlack}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Audio}
+                        
+                        {block:AudioEmbed}
+                            <p>{AudioEmbed-250}</p>
+                        {/block:AudioEmbed}
+                        
+                        {block:Answer}
+                            {block:Date}
+                                <h4 class="date"><a href="{Permalink}">{MonthNumber}.{DayOfMonth}.{ShortYear} / {NoteCountWithLabel}</a></h4>
+                            {/block:Date}
+                            <p class="quote">&ldquo;{Question}&rdquo;</p>
+                            <p class="right">&mdash; {Asker}</p>
+                            <p>{Answer}</p>
+                        {/block:Answer}
+                    </div>
+                    
+                    {block:HasTags}
+                        <div id="tags">
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>&nbsp;
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                </div>
+                
+                {block:PostNotes}
+                    <div id="notes">
+                        {PostNotes}
+                    </div>
+                {/block:PostNotes}
+            {/block:Posts}
+        </div>
+
+        <p id="pagination">
+            {block:PreviousPage}
+                <a class="pagination" href="{PreviousPage}">&#171;</a>
+            {/block:PreviousPage}
+
+            {block:NextPage}
+                <a class="pagination" href="{NextPage}">&#187;</a>
+            {/block:NextPage}
+        </p>
+        
+    </body>
+</html>

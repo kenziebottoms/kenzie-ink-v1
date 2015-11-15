@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            ESCHER theme
+            judgmentalgiraffe.com
+            Updated 7/8/2013
+        !-->
+        
+        <meta name="text:Bio" content="Turpis massa augue ultricies parturient placerat turpis elementum, porta ultricies augue non. Pellentesque placerat rhoncus augue? Montes scelerisque rhoncus vel aenean adipiscing!" />
+
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+        
+            body {
+                background-image: url("http://i643.photobucket.com/albums/uu156/Shifting/clemescher.png");
+                font-family: arial, sans-serif;
+                font-size: 10pt;
+                background-attachment: fixed;
+                color: #222;
+                line-height: 1.5;
+                margin: auto;
+            }
+            a {
+                color: #ac2727;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            img {
+                border-radius: 7px;
+            }
+            h1 {
+                letter-spacing: .9;
+                font-style: italic;
+                font-size: 4em;
+                margin-top: 20px;
+            }
+            h1, h2, h3, h4 {
+                font-family: timew new roman, serif;
+                letter-spacing: 1.1;
+            }
+            h3 {
+                font-size: 1.6em;
+                font-family: times new roman, serif;
+                margin-top: .5em;
+            }
+            blockquote {
+                margin-right: 0;
+            }
+            ul.chat {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            #sidebar {
+                position: fixed;
+                left: 60%;
+                margin-left: 50px;
+                top: 80px;
+                width: 280px;
+            }
+                #bio {
+                    text-align: justify;
+                    background: white;
+                    padding: 20px;
+                    border-top-right-radius: 10px;
+                    border-top-left-radius: 10px;
+                    font-size: .9em;
+                    margin: 0;
+                }
+                #menu {
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    background: #222;
+                    list-style-type: none;
+                    margin: 0;
+                    font-family: times new roman, serif;
+                    line-height: 1.1;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 1.7em;
+                    font-weight: bold;
+                    letter-spacing: 1.1;
+                }
+            #header {
+                color: #222;
+                font-size: 1.2em;
+                margin: auto;
+                width: 500px;
+                text-align: center;
+                line-height: 1;
+                height: 80px;
+                vertical-align: middle;
+            }
+                #header a {
+                    color: #222;
+                }
+                #description {
+                    margin-top: -1.5em;
+                }
+            #posts {
+                width: 560px;
+                margin: 0 40% 0 auto;
+            }
+                #post {
+                    width: 560px;
+                    margin: 50px auto;
+                    text-align: justify;
+                }
+                    #postbody {
+                        padding: 1.27em 2.1em;
+                        background: white;
+                        border-top-right-radius: 10px;
+                        border-top-left-radius: 10px;
+                    }
+                    #tags {
+                        border-bottom-right-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        background: #222;
+                        font-size: .9em;
+                        padding: 15px;
+                        color: #ac2727;
+                        text-align: center;
+                        line-height: 1.4;
+                    }
+                #notes {
+                    color: white;
+                    font-size: .8em;
+                    width: 300px;
+                    text-align: left;
+                    line-height: 1.1;
+                    margin: auto;
+                }
+                    #notes ol {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    #notes img {
+                        border-radius: 50%;
+                    }
+                    #notes a {
+                        color: #222;
+                    }
+            #footer {
+                border-radius: 10px;
+                padding: 10px;
+                background: #222;
+                color: #ac2727;
+                width: 350px;
+                margin: 20px auto;
+                font-size: .8em;
+                text-align: center;
+            }
+            
+            .label {
+                font-weight: bold;
+                font-family: times new roman, serif;
+            }
+            .quote {
+                font-family: timew new roman, serif;
+                font-weight: bold;
+                font-size: 1.7em;
+                letter-spacing: 1.1;
+                line-height: 1.1;
+            }
+            #tumblr_controls {
+                position: fixed !important;
+                top: 0 !important;
+                right: 0 !important;
+            }
+        
+        </style>
+    </head>
+    <body>
+    
+        <div id="sidebar">
+            <div id="bio">
+                <p>{text:Bio}</p>
+            </div>
+            <ul id="menu">
+                <li><a href="/">Home</a></li>
+                {block:AskEnabled}
+                    <li><a href="/ask">Ask</a></li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                    <li><a href="/submit">Submit</a></li>
+                {/block:SubmissionsEnabled}
+                {block:HasPages}
+                    {block:Pages}
+                        <li><a href="{URL}">{Label}</a></li>
+                    {/block:Pages}
+                {/block:HasPages}
+                <li><a href="/random">Random</a></li>
+                <li><a href="/archive">Archive</a></li>
+                <li><a href="http://www.judgmentalgiraffe.com">Theme</a></li>
+            </ul>
+        </div>
+
+        <div id="posts">
+
+            <div id="header">
+                <a href="/"><h1>{Title}</h1></a>
+
+                {block:Description}
+                    <h3 id="description">{Description}</h3>
+                {/block:Description}
+            </div>
+
+            {block:Posts}
+                <div id="post">
+                    <div id="postbody">
+                        {block:Text}
+                            {block:Title}
+                                <h3><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+                            {Body}
+                        {/block:Text}
+
+                        {block:Photo}
+                            <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            <p>{Photoset-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photoset}
+
+                        {block:Quote}
+                            <p class="quote">&ldquo;{Quote}&rdquo;</p>
+                            {block:Source}
+                                <p>&mdash; {Source}</p>
+                            {/block:Source}
+                        {/block:Quote}
+
+                        {block:Link}
+                            <h3><a href="{URL}" class="link" {Target}>{Name} &#187;</</a></h3>
+                            {block:Description}
+                                {Description}
+                            {/block:Description}
+                        {/block:Link}
+
+                        {block:Chat}
+                            <p>
+                                {block:Title}
+                                    <h3><a href="{Permalink}">{Title}</a></h3>
+                                {/block:Title}
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                            </p>
+                        {/block:Chat}
+
+                        {block:Video}
+                            <p>{Video-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Video}
+
+                        {block:Audio}
+                            <p>{AudioPlayerBlack}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Audio}
+                        
+                        {block:Answer}
+                            <h3><a href="{Permalink}">{Asker} asked:</a></h3>
+                            <blockquote>{Question}</blockquote>
+                            <p>{Answer}</p>
+                        {/block:Answer}
+                    </div>
+                        
+                    <div id="tags">
+                        {block:Date}
+                            {block:HasTags}
+                                {block:Tags}
+                                    #<a href="{TagURL}">{Tag}</a>
+                                {/block:Tags}
+                                |
+                            {/block:HasTags}
+                            <a href="{Permalink}">{TimeAgo}{block:NoteCount} with {NoteCountWithLabel}{/block:NoteCount}</a>
+                        {/block:Date}
+                    </div>
+                </div>
+                
+                {block:PostNotes}
+                    <div id="notes">
+                        {PostNotes}
+                    </div>
+                {/block:PostNotes}
+            {/block:Posts}
+        </div>
+
+        <p id="footer">
+            {block:PreviousPage}<a href="{PreviousPage}">{/block:PreviousPage}&#171; previous{block:PreviousPage}</a>{/block:PreviousPage}
+            &nbsp;&nbsp;&nbsp;
+            {block:NextPage}<a href="{NextPage}">{/block:NextPage}next &#187;{block:NextPage}</a>{/block:NextPage}
+        </p>
+        
+    </body>
+</html>

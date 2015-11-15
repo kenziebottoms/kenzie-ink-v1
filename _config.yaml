@@ -1,0 +1,9 @@
+name: "kenzie.INK"
+description: "kenzie's yin yang of art and dev"
+ 
+url: "http://localhost:4000"
+ 
+paginate: 10
+ 
+markdown: rdiscount
+permalink: pretty

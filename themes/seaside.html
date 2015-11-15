@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+    <head>
+        <!--
+            SEASIDE theme
+            judgmentalgiraffe.com
+            Updated 7/9/2013
+        !-->
+        
+        <meta name="text:Link 1 Title" content="link 1" />
+        <meta name="text:Link 2 Title" content="link 2" />
+        <meta name="text:Link 3 Title" content="link 3" />
+        <meta name="text:Link 1 URL" content="http://" />
+        <meta name="text:Link 2 URL" content="http://" />
+        <meta name="text:Link 3 URL" content="http://" />
+        
+        <meta name="color:Background" content="#4dc1a8" />
+        <meta name="color:Text" content="#6b5d4d" />
+        <meta name="color:Links" content="#b25e89" />
+        <meta name="color:Tag Background" content="#92E2D0" />
+        <meta name="color:Post Background" content="#c1f2e7" />
+        
+        <title>{Title}</title>
+        <link rel='icon' href='{Favicon}' />
+        <link rel='shortcut icon' href='{Favicon}' />
+        <link rel='alternate' type='application/rss+xml' href='{RSS}' />
+        <meta name='description' content='{MetaDescription}' />
+        <style type='text/css'>
+          
+            body {
+                background: {color:Background};
+                margin: auto;
+                color: {color:Text};
+                font: 8pt arial, sans-serif;
+                text-align: left;
+            }
+            a {
+                text-decoration: none;
+                color: {color:Links};
+            }
+            table {
+                color: inherit;
+                font: inherit;
+            }
+            h1, h2, h3, h4 {
+                font-family: times new roman, serif;
+                font-style: italic;
+                margin-top: 0;
+                line-height: 120%;
+            }
+            strong {
+                font-family: serif;
+            }
+            blockquote {
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 4px;
+                border-left: 3px double {color:Text};
+            }
+            
+            #sidebar {
+                font-size: 1.3em;
+                font-family: times new roman, serif;
+                font-style: italic;
+                font-variant: small-caps;
+                position: fixed;
+                left: 50%;
+                top: 50px;
+                margin-left: 145px;
+                text-align: left;
+                width: 250px;
+            }
+                #bio {
+                    font-size: .7em;
+                    font-family: arial, sans-serif;
+                    margin-bottom: 7px;
+                    font-variant: normal;
+                    font-style: normal;
+                }
+                #title {
+                    text-align: center;
+                    margin: auto;
+                    background: {color:Text};
+                    color: {color:Tag Background};
+                    font-size: 1.1em;
+                    padding: 2px;
+                }
+                    #title a {
+                        color: {color:Tag Background};
+                    }
+                .right {
+                   text-align: right;
+                }
+                #menu {
+                    width: 250px;
+                    background: {color:Tag Background};
+                }
+                    #menu td {
+                        padding: 5px;
+                        vertical-align: middle;
+                    }
+                    .menu {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                #big {
+                    font-size: 50pt;
+                    font-family: times new roman, serif;
+                    width: .5em;
+                    text-align: center;
+                }
+            #posts {
+               width: 510px;
+               position: absolute;
+               left: 50%;
+               top: 50px;
+               margin-left: -395px;
+            }
+                .post {
+                   background: {color:Post Background};
+                   margin: auto;
+                   margin-bottom: 30px;
+                   padding: 5px;
+                   line-height: 150%;
+                }
+                    #infoblock {
+                        float: right;
+                        background: {color:Text};
+                        text-align: center;
+                        color: {color:Post Background};
+                        font-size: .9em;
+                        padding: 4px;
+                        width: 5em;
+                        margin-bottom: 5px;
+                    }
+                        #infoblock span {
+                            font-size: 4em;
+                            line-height: 1em;
+                            font-family: serif;
+                        }
+                    #miniinfoblock {
+                        background: {color:Tag Background};
+                        float: right;
+                        text-align: center;
+                        padding: 10px;
+                        margin: 0 0 10px 5px;
+                    }
+                    ul.chat {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .source {
+                        text-align: center;
+                    }
+                    .tags {
+                        background: {color:Tag Background};
+                        padding: 5px;
+                    }
+                    .notes {
+                        margin: 5px;
+                    }
+                #nav {
+                    font-size: 11pt;
+                    font-family: times new roman, serif;
+                    font-style: italic;
+                    font-variant: small-caps;
+                    text-align: center;
+                    margin: auto;
+                }
+
+        </style>
+    </head>
+
+    <body>
+    
+        <div id="sidebar">
+
+            <div id="bio">
+                {Description}
+            </div>
+
+            <div id="title">
+                <a href="/">{Title}</a>
+            </div>
+            
+            <table id="menu">
+                <tr>
+                    <td class="right">
+                        <a href="/">home</a><br />
+                        {block:AskEnabled}<li class="menu"><a href="/ask">ask</a></li>{/block:AskEnabled}
+                        {block:SubmissionsEnabled}<li class="menu"><a href="/submit">submit</a></li>{/block:SubmissionsEnabled}
+                        <li class="menu"><a href="/archive">archive</a></li>
+                        <li class="menu"><a href="http://www.judgmentalgiraffe.com/">theme</a></li>
+                    </td>
+                    <td id="big">
+                        &
+                    </td>
+                    <td>
+                        {block:HasPages}
+                            {block:Pages}<li class="menu"><a href="{URL}">{Label}</a></li>{/block:Pages}
+                        {/block:HasPages}
+                        <li class="menu"><a href="{text:Link 1 URL}">{text:Link 1 Title}</a></li>
+                        <li class="menu"><a href="{text:Link 2 URL}">{text:Link 2 Title}</a></li>
+                        <li class="menu"><a href="{text:Link 3 URL}">{text:Link 3 Title}</a></li>
+                    </td>
+                </tr>
+            </table>
+
+            <p id="nav">
+                {block:PreviousPage}
+                    <a href="{PreviousPage}">&#171; previous</a> |{/block:PreviousPage}{block:NextPage}| <a href="{NextPage}">next &#187;</a>
+                {/block:NextPage}
+            </p>
+            
+        </div>
+
+        <div id="posts">
+            {block:Posts}
+                <div class="post">
+                
+                    <a href="{Permalink}">
+                        <div id="infoblock">
+                            <span>{DayOfMonth}</span><br />
+                            {Month}
+                        </div>
+                    </a>
+                    <a href="{Permalink}">
+                        <div id="miniinfoblock">
+                            {NoteCount}
+                        </div>
+                    </a>
+
+                    {block:Text}
+                        {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                        {Body}
+                    {/block:Text}
+                
+                    {block:Photo}
+                        <p><img src="{PhotoURL-500}" alt="{PhotoAlt}" /></p>
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Photo}
+                
+                    {block:Photoset}
+                        <p>{Photoset-500}</p>
+                        {block:Caption}<p>{Caption}</p>{/block:Caption}
+                    {/block:Photoset}
+                
+                    {block:Quote}
+                        <h2><a href="{Permalink}">“{Quote}”</a></h2>
+                        {block:Source}
+                          <p class="source">&mdash; {Source}</p>
+                        {/block:Source}
+                    {/block:Quote}
+
+                    {block:Link}
+                        <h2><a href="{URL}">{Name}</a></h2>
+                        {block:Description}
+                        <p>{Description}</p>
+                        {/block:Description}
+                    {/block:Link}       
+                
+                    {block:Chat}
+                        {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                        <p>
+                            <ul class="chat">
+                                {block:Lines}
+                                    <li>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</li>
+                                {/block:Lines}
+                            </ul>
+                        </p>
+                    {/block:Chat}
+
+                    {block:Audio}
+                        <h2><a href="{Permalink}">{TrackName}</a></h2>
+                        <p>{AudioPlayerBlack}
+                        {block:Caption}{Caption}{/block:Caption}
+                    {/block:Audio}
+
+                    {block:Video}
+                        <h2><a href="{Permalink}">Permalink</a></h2>
+                        <p>{Video-500}</p>
+                        {block:Caption}<div>{Caption}</div>{/block:Caption} 
+                    {/block:Video}
+                
+                    {block:Answer}
+                        <h2><a href="{Permalink}">{Asker} asked:</a></h2>
+                        <blockquote>{Question}</blockquote>
+                        <p>{Answer}</p>
+                    {/block:Answer}
+
+                    <div class="tags">
+                        {block:HasTags}
+                            {block:Tags}
+                               <a href='{TagURL}'>#{Tag}</a>&nbsp;&nbsp;
+                            {/block:Tags}
+                        {/block:HasTags}
+                    </div>
+
+                    {block:PostNotes}
+                        <div class="notes">
+                            {block:Posts}
+                                {PostNotes}
+                            {/block:Posts}
+                        </div>
+                    {/block:PostNotes}
+
+                </div>
+            {/block:Posts}
+                
+        </div>
+    </body>
+</html>

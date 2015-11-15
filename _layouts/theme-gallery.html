@@ -1,0 +1,22 @@
+{% include head.html %}
+    <body>
+        <div id="container">
+            <div class="content scene_element scene_element--fadeinup kenzie">
+                <a class="no-underline" href="/kenzie">
+                    <div id="back-block" class="kenzie">
+                        <h1>themes &raquo;</h1>
+                    </div>
+                </a>
+                <div id="bio" class="kenzie">
+                    {{ content }}
+                </div>
+                {% include kenzie-menu.html %}
+            </div>
+            <div id="sidebar" class="scene_element scene_element--fadeinleft gallery kenzie">
+                <div id="sidebar-content" class="gallery kenzie">
+                    {% include theme-gallery.html %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

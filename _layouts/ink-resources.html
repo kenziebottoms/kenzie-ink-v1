@@ -1,0 +1,22 @@
+{% include head.html %}
+    <body>
+        <div id="container">
+            <div class="content scene_element scene_element--fadeinup ink">
+                <a href="/ink" class="no-underline">
+                    <div id="back-block" class="ink">
+                        <h1><span class="kenzie">&laquo;</span> resources</h1>
+                    </div>
+                </a>
+                <div id="bio" class="ink">
+                    {{ content }}
+                </div>
+                {% include ink-menu.html %}
+            </div>
+            <div id="sidebar" class="scene_element scene_element--fadeinright ink">
+                <div id="sidebar-content">
+                    {% include ink-resources.html %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

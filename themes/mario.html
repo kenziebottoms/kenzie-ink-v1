@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            MARIO theme
+            judgmentalgiraffe.com
+            Uptdated 7/8/2013
+        !-->
+        
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+        
+            body {
+                background-image: url("http://i643.photobucket.com/albums/uu156/Shifting/mariowall.png");
+                font-family: arial, sans-serif;
+                font-size: 10pt;
+                color: #444;
+                background-attachment: fixed;
+                margin: auto;
+            }
+            a {
+                color: #1a9d1a;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            blockquote {
+                padding-left: 1.12em;
+                border-left: solid 3px #1a9d1a;
+                margin-left: .7em;
+            }
+            h1 {
+                font-size: 2.4em;
+                letter-spacing: -.05em;
+            }
+            h2 {
+                font-size: 2em;
+                letter-spacing: -.05em;
+            }
+            h3 {
+                font-size: 1.5em;
+                letter-spacing: -.05em;
+                display: inline;
+            }
+            h4 {
+                letter-spacing: -.05em;
+            }
+            
+            #bio {
+                width: 300px;
+                margin: auto;
+                margin-top: -30px;
+                font-size: 8pt;
+                text-align: justify;
+            }
+            #menu {
+                list-style-type: none;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                letter-spacing: -.05em;
+            }
+                #menu li {
+                    margin: 0 5px;
+                    display: inline;
+                    font-weight: bold;
+                }
+            #posts {
+                width: 530px;
+                margin: auto;
+            }
+                #header {
+                    text-align: center;
+                    line-height: 100%;
+                    margin: 50px auto;
+                }
+                #post {
+                    background: white;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    border-radius: 10px;
+                    margin: 40px auto;
+                }
+                    #box {
+                        padding: 15px;
+                    }
+                    #tags {
+                        border-bottom-right-radius: 10px;
+                        border-bottom-left-radius: 10px;
+                        background: #1a9d1a;
+                        font-size: .9em;
+                        padding: 10px;
+                        color: white;
+                        border-width: 24px 0px 0px;
+                        border-image: url(http://i643.photobucket.com/albums/uu156/Shifting/mariograss.png) 27 23 repeat;
+                    }
+                    #tags a {
+                        color: white;
+                    }
+                #notes {
+                    font-size: .8em;
+                    width: 500px;
+                    margin: auto;
+                }
+                #notes ol {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+            #footer {
+                margin: 20px auto;
+                text-align: center;
+                font-size: .8em;
+                padding: 5px;
+            }
+
+            ul.chat {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .date {
+                color: #999;
+            }
+            .date a {
+                color: #999;
+            }
+            .label {
+                font-weight: bold;
+                letter-spacing: -.05em;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="posts">
+            <div id="header">
+                <h1><a href="/">{Title}</a></h1>
+            </div>
+            
+            <div id="bio">
+                <p>{Description}</p>
+            </div>
+
+            <ul id="menu">
+                <li><a href="/">home</a></li>
+                {block:AskEnabled}<li><a href="/ask">ask</a></li>{/block:AskEnabled}
+                {block:SubmissionsEnabled}<li><a href="/submit">submit</a></li>{/block:SubmissionsEnabled}
+                {block:HasPages}
+                    {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+                {/block:HasPages}
+                <li><a href="/archive">archive</a></li>
+                <li><a href="http://www.judgmentalgiraffe.com/">theme</a></li>
+            </ul>
+
+            {block:Posts}
+                <div id="post">
+                    <div id="box">
+                    
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</h3>&nbsp;&nbsp;</a>
+                        {/block:Title}
+                        {block:Link}
+                            <h3><a href="{URL}" class="link" {Target}>{Name} &#187;</a></h3>&nbsp;&nbsp;
+                        {/block:Link}
+
+                        {block:Date}
+                            <a href="{Permalink}" class="date">{12Hour}:{Minutes}{AmPm} / {MonthNumber}.{DayOfMonth}.{ShortYear}{block:NoteCount} / {NoteCountWithLabel}{/block:NoteCount}</a>
+                        {/block:Date}
+                    
+                        {block:Text}
+                            {Body}
+                        {/block:Text}
+
+                        {block:Photo}
+                            <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            <p>{Photoset-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photoset}
+
+                        {block:Quote}
+                            <p>“{Quote}”</p>
+                            {block:Source}
+                                <p> &mdash; {Source}</p>
+                            {/block:Source}
+                        {/block:Quote}
+
+                        {block:Link}
+                            {block:Description}
+                                {Description}
+                            {/block:Description}
+                        {/block:Link}
+
+                        {block:Chat}
+                            <p>
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                            </p>
+                        {/block:Chat}
+
+                        {block:Video}
+                            <p>{Video-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Video}
+
+                        {block:Audio}
+                            <p>{AudioPlayerBlack}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Audio}
+                    </div>
+
+                    {block:HasTags}
+                        <div id="tags">
+                            {block:Tags}
+                                <a href="{TagURL}">#{Tag}</a>&nbsp;
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                </div>
+                
+                <div id="notes">
+                    {PostNotes}
+                </div>
+            {/block:Posts}
+
+            <p id="footer">
+                {block:PreviousPage}<a href="{PreviousPage}">{/block:PreviousPage}&#171; previous{blockPreviousPage}</a>{/block:PreviousPage}{/block:PreviousPage}
+                /
+                {block:NextPage}<a href="{NextPage}">{/block:NextPage}next &#187;{block:NextPage}</a>{/block:NextPage}
+            </p>
+
+        </div>
+        
+    </body>
+</html>

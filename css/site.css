@@ -1,0 +1,475 @@
+/* KEY FRAMES ------------------------------------------ */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(50%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+/* ANIMATION ------------------------------------------- */
+
+/** Basic styles for an animated element */
+.scene_element {
+	animation-duration: 0.5s;
+	transition-timing-function: ease-in;
+	animation-fill-mode: both;
+}
+/** An element that fades in */
+.scene_element--fadein {
+	animation-name: fadeIn;
+}
+/** An element that fades in and slides up */
+.scene_element--fadeinup {
+	animation-name: fadeInUp;
+}
+/** An element that fades in and slides down */
+.scene_element--fadeindown {
+	animation-name: fadeInDown;
+}
+/** An element that fades in and slides from the right */
+.scene_element--fadeinright {
+	animation-name: fadeInRight;
+}
+/** An element that fades in and slides from the left */
+.scene_element--fadeinleft {
+	animation-name: fadeInLeft;
+}
+/** Reverse "exit" animations */
+$.is-exiting {
+		.scene_element {
+			animation-direction: alternate-reverse;
+		}
+}
+
+/* CSS ------------------------------------------------- */
+body {
+	font-family: sans-serif;
+	font-size: 12pt;
+	margin: 0;
+	width: 100%;
+	overflow-x: hidden;
+	background: #eee;
+	color: #666;
+	font-weight: 100;
+}
+a {
+	color: inherit;
+	transition: .5s;
+}
+	a:hover {
+		color: #8172B0;
+	}
+.center {
+	text-align: center !important;
+}
+.small {
+	font-size: .8em !important;
+}
+.smaller {
+	font-size: .6em !important;
+}
+.no-border {
+	border: 0 !important;
+}
+.no-underline {
+	text-decoration: none !important;
+}
+.clear {
+	clear: both;
+}
+.ink h1, .ink h2, .ink h3, .ink h4, .ink h5, h1 .ink, h2 .ink, h3 .ink, h4 .ink, h5 .ink {
+	font-family: "co-headline","Harabara Mais Demo",sans-serif;
+	font-weight: 100;
+	margin: 0;
+}
+	.ink h1 {
+		font-size: 3em;
+	}
+.kenzie h1, .kenzie h2, .kenzie h3, .kenzie h4, .kenzie h5, h1 .kenzie, h2 .kenzie, h3 .kenzie, h4 .kenzie, h5 .kenzie {
+	font-family: sans-serif;
+	font-weight: 100;
+	margin: 0;
+}
+	.kenzie h1 {
+		font-size: 3em;
+	}
+#kenzie, #ink {
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 40pt;
+}
+.hidden {
+	font-size: 20px;
+	font-weight: 300;
+	font-family: sans-serif;
+}
+#circle {
+	position: relative;
+	left: 50%;
+	z-index: 100;
+	height: 30px;
+	width: 30px;
+	margin-left: -15px;
+	border-radius: 50%;
+	background: white;
+	margin-top: -10px;
+	margin-bottom: -20px;
+}
+#intro {
+	width: 500px;
+	margin: 100px auto;
+	font-size: .8em;
+	line-height: 1.8;
+}
+#kenzie-block {
+	background: #534741;
+	transition: .5s;
+	font-size: 40pt;
+}
+	#kenzie {
+		font-family: sans-serif;
+		padding-left: 50%;
+		margin-left: -210px;
+		text-align: left;
+		font-weight: 100;
+		transition: .5s;
+	}
+		#kenzie .hidden {
+			color: #534741;
+		}
+		#kenzie:hover {
+			padding-left: 30%;
+			color: #534741;
+			font-size: 50pt;
+			background: #fff;
+		}
+#ink-block {
+	background: #8172B0;
+	color: #fff;
+	transition: .5s;
+	margin-top: 10px;
+}
+	#ink {
+		font-family: "co-headline","Harabara Mais Demo",sans-serif;
+		text-align: right;
+		padding-right: 50%;
+		margin-right: -150px;
+		transition: .5s;
+	}
+		#ink .hidden {
+			color: #8172B0;
+		}
+		#ink:hover {
+			padding-right: 30%;
+			color: #8172B0;
+			font-size: 50pt;
+			background: #fff;
+		}
+.content {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	font-weight: 300;
+	line-height: 1.8;
+}
+	.content.ink {
+		left:0;
+	}
+	.content.kenzie {
+		right: 0;
+	}
+		#bio {
+			width: 25%;
+			margin: 10% auto;
+			min-width: 250px;
+			max-width: 400px;
+			font-size: .9em;
+		}
+.links {
+	padding: 0 20%;
+	margin: 0 auto;
+	min-width: 300px;
+	max-width: 550px;
+	font-family: "letter-gothic-std","Roboto",sans-serif;
+	text-align: justify;
+	text-align: center;
+	font-weight: 300;
+}
+	.links ul {
+		list-style-type: none;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+		text-align: justify;
+	}
+		.links ul li {
+			margin: 0 9px;
+			padding: 0;
+			display: inline-block;
+		}
+			.links ul li a {
+				text-decoration: none;
+			}
+#back-block {
+	color: #fff;
+	margin-top: 100px;
+	transition: .5s;
+}
+	#back-block.ink {
+		background: #534741;
+		padding-left: 30%;
+	}
+		#back-block.ink:hover {	
+			padding-left: 15%;
+			color: #534741;
+			background: #fff;
+		}
+	#back-block.kenzie {
+		background: #8172B0;
+		padding-right: 30%;
+		text-align: right;
+	}
+		#back-block.kenzie:hover {	
+			padding-right: 15%;
+			color: #8172B0;
+			background: #fff;
+		}
+#sidebar {
+	height: 100%;
+	overflow: scroll;
+	width: 50%;
+	color: #C9C1BD;
+	position: absolute;
+}
+	#sidebar.ink {
+		background: #8172B0;
+		right: 0;
+	}
+	#sidebar.kenzie {
+		left: 0;
+		background: #534741;
+	}
+		#sidebar.kenzie h2 {
+			color: #ffffff;
+		}
+		#sidebar.kenzie h3 {
+			color: #ffffff;
+			font-size: 1.6em;
+		}
+	#sidebar-content {
+		padding: 30px;
+		height: 100%;
+	}
+		#sidebar-content.gallery {
+			padding: 0 210px 0 30px;
+		}
+		#sidebar-content.gallery.kenzie {
+			padding: 0 30px 0 210px;
+		}
+	.resources {
+		margin: 50px;
+		line-height: 1.5;
+		font-weight: 100;
+		height: 80%;
+	}
+		.ink .resources {
+			color: #fff;
+		}
+	.projects {
+		margin: 50px;
+		font-size:.9em;
+	}
+		.projects p {
+			margin-left: 50px;
+			line-height: 1.5;
+		}
+	#resume {
+		margin: 50px;
+		line-height: 1.4;
+	}
+		#resume h4 {
+			margin: 0;
+			font-size: 1.3em;
+		}
+		#resume ul {
+			list-style-type: circle;
+			margin-top: .5em
+		}
+		.title-block {
+			margin: .5em 0;
+		}
+		.subheader {
+			color: #A0948E;
+		}
+		.resume-block {
+			margin: 0 0 40px 0;
+		}
+		.resume-block h3 {
+			display: inline;
+			margin-right: 4px;
+		}
+	#table-wrapper {
+		margin: 20% 20% 0 20%;
+		text-align: center;
+		max-width: 500px;
+		font-family: sans-serif;
+	}
+		table {
+			margin: 20px 0;
+			min-width: 300px;
+			text-align: left;
+			color: #C9C1BD;
+			text-align: left;
+			border-collapse: collapse;
+			font-family: sans-serif;
+			font-weight: 100;
+			font-size: .9em;
+		}
+			table tr td:nth-child(1) {
+				text-align: right;
+				padding-right: 10px;
+				white-space: nowrap;
+			}
+			table tr td:nth-child(2) {
+				border-left: 1px solid #948780;
+				width: 100%;
+			}
+			table td {
+				padding: 2px 0;
+			}
+				table .bar {
+					background: #71B160;
+					height: 6px;
+					margin: 0;
+				}
+				table .q100 {
+					background: #71B160;
+					width: 100%;
+				}
+				table .q80 {
+					background: #ADD35A;
+					width: 80%;
+				}
+				table .q60 {
+					background: #F4F46E;
+					width: 60%;
+				}
+			table .q40 {
+					background: #FFC955;
+					width: 40%;
+				}
+				table .q20 {
+					background: #FF9955;
+					width: 20%;
+				}
+				table .comfort-level {
+					padding-top: 8px;
+					border-left: 0 !important;
+					border-top: 1px solid #948780;
+					font-size: 1.2em;
+				}
+#preview {
+	overflow: scroll;
+	height: 100%;
+	width: 150px;
+	position: absolute;
+	right: 30px;
+}
+	#preview.kenzie {
+		overflow: scroll;
+		height: 100%;
+		width: 150px;
+		position: absolute;
+		left: 30px;
+	}
+	#preview * {
+		border: 0px;
+	}
+	#preview img {
+		width: 100% !important;
+		height: auto;
+		width: auto;
+		cursor: pointer;
+	}
+#lightbox {
+	height: 100%;
+	float:left;
+	width: 100%;
+	text-align: center;
+}
+	#view-image {
+		padding-top: 30px;
+	}
+		#view-image img {
+			max-width: 100%;
+			height: auto;
+			max-height: 500px;
+			max-height: none;
+			text-align: center;
+		}
+	#desc {
+		color: #fff;
+		margin: 10px 20px;
+	}
+		#desc textarea {
+			width: 100%;
+			height: 200px;
+			background: #eee;
+			resize: none;
+			font-family: monospace;
+			color: #666;
+		}
+		#subcaption {
+			margin-top: 15px;
+			font-size: .9em;
+			opacity: .5;
+		}
+		#caption {
+			margin: 10px 0 20px 0;
+			font-size: 1.1em;
+		}

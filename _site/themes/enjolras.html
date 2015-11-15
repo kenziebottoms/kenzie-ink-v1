@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            ENJOLRAS theme
+            judgmentalgiraffe.com
+            Updated 7/8/2013
+        !-->
+        
+        <meta name="text:Bio" content="Turpis massa augue ultricies parturient placerat turpis elementum, porta ultricies augue non. Pellentesque placerat rhoncus augue? Montes scelerisque rhoncus vel aenean adipiscing!" />
+
+        <title>{Title} {block:PageSummary}&middot; {PageSummary}{/block:PageSummary}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+
+            body {
+                font-family: georgia, times new roman, serif;
+                font-size: 9pt;
+                line-height: 1.4;
+                text-align: center;
+                color: #444;
+            }
+            a {
+                color: #BD3333;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            #menu {
+                font-size: 1.8em;
+                font-style: italic;
+                font-weight: bold;
+                position: fixed;
+                left: 50px;
+                top: 0;
+                text-align: left;
+                width: 100%;
+                background: white;
+            }
+                #title {
+                    font-style: italic;
+                    font-size: 3em;
+                    color: white;
+                    text-shadow: 1px 1px #BD3333;
+                    padding: 0;
+                    margin: 0;
+                    line-height: 1;
+                }
+                #title a:hover {
+                    text-decoration: none;
+                }
+                #menulist {
+                    letter-spacing: 1px;
+                    list-style-type: none;
+                    margin: 10px 0;
+                    padding: 0;
+                }
+                #menulist li {
+                    display: inline;
+                }
+            #sidebar {
+                width: 200px;
+                font-size: .9em;
+                position: fixed;
+                left: 150px;
+                top: 150px;
+                text-align: justify;
+            }
+                #footer {
+                    font-size: .9em;
+                    text-align: center;
+                }
+            #posts {
+                width: 500px;
+                margin: 150px 0 0 450px;
+            }
+                #post {
+                    text-align: justify;
+                    margin-top: 40px;
+                    padding-bottom: 30px;
+                    border-bottom: 1px solid #D6D2DD;
+                }
+                    #tags {
+                        font-size: .8em;
+                        width: 400px;
+                        text-align: center;
+                        margin: 5px auto 0 auto;
+                    }
+                    #date {
+                        font-size: .8em;
+                        width: 400px;
+                        text-align: center;
+                        margin: 10px auto 0 auto;
+                        color: #999;
+                    }
+                    #date a {
+                        color: #999;
+                    }
+                #notes {
+                    color: #999;
+                    font-size: .8em;
+                    width: 400px;
+                    text-align: justify;
+                    padding: 5px;
+                    margin: auto;
+                }
+                #notes ol {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+        
+            ul.chat {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+            .no_underline:hover {
+                text-decoration: none;
+            }
+            .quote {
+                font-size: 1.3em;
+            }
+        
+        </style>
+    </head>
+    <body>
+    
+        <div id="menu">
+            <a class="no_underline" href="/"><h1 id="title">{Title}</h1></a>
+            <ul id="menulist">
+                <li><a href="/">home</a></li>
+                {block:AskEnabled}
+                    <li> &middot; <a href="/ask">ask</a></li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                    <li> &middot; <a href="/submit">submit</a></li>
+                {/block:SubmissionsEnabled}
+                {block:HasPages}
+                    {block:Pages}
+                        <li> &middot; <a href="{URL}">{Label}</a></li>
+                    {/block:Pages}
+                {/block:HasPages}
+                <li> &middot; <a href="/archive">archive</a></li>
+                <li> &middot; <a href="http://www.judgmentalgiraffe.com/">theme</a></li>
+            </ul>
+        </div>
+    
+        <div id="sidebar">
+
+            {block:Description}
+                <h3 id="description">{Description}</h3>
+            {/block:Description}
+            <p id="bio">
+                {text:Bio}
+            </p>
+            <p id="footer">
+                {block:PreviousPage}<a href="{PreviousPage}">{/block:PreviousPage}&#171; previous{block:PreviousPage}</a>{/block:PreviousPage} | {block:NextPage}<a href="{NextPage}">{/block:NextPage}next &#187;{block:NextPage}</a>{/block:NextPage}
+            </p>
+        </div>
+
+        <div id="posts">
+            {block:Posts}
+                <div id="post">
+                    {block:Text}
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        {Body}
+                    {/block:Text}
+
+                    {block:Photo}
+                        <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Photo}
+
+                    {block:Photoset}
+                        <p>{Photoset-500}</p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Photoset}
+
+                    {block:Quote}
+                        <p class="quote">"{Quote}"</p>
+                        {block:Source}
+                            <p>&mdash; {Source}</p>
+                        {/block:Source}
+                    {/block:Quote}
+
+                    {block:Link}
+                        <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+                        {block:Description}
+                            {Description}
+                        {/block:Description}
+                    {/block:Link}
+
+                    {block:Chat}
+                        <p>
+                            {block:Title}
+                                <h3><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+                            <ul class="chat">
+                                {block:Lines}
+                                    <li class="{Alt} user_{UserNumber}">
+                                        {block:Label}
+                                            <span class="label">{Label}</span>
+                                        {/block:Label}
+                                        {Line}
+                                    </li>
+                                {/block:Lines}
+                            </ul>
+                        </p>
+                    {/block:Chat}
+
+                    {block:Video}
+                        <p>{Video-500}</p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Video}
+
+                    {block:Audio}
+                        <p>{AudioPlayerBlack}</p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Audio}
+                    
+                    {block:Date}
+                        <div id="date">
+                            <a href="{Permalink}">{12Hour}:{Minutes} {CapitalAmPm} &middot; {DayOfMonth} {Month} {Year}{block:NoteCount} &middot; {NoteCountWithLabel}{/block:NoteCount}</a>
+                        </div>
+                    {/block:Date}
+                    
+                    {block:HasTags}
+                        <div id="tags">
+                            {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>&nbsp;&nbsp;
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                </div>
+                
+                {block:PostNotes}
+                    <div id="notes">
+                        {PostNotes}
+                    </div>
+                {/block:PostNotes}
+            {/block:Posts}
+        </div>
+        
+    </body>
+</html>

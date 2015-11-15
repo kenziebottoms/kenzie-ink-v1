@@ -1,0 +1,607 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            HOGWARTS SPOTLIGHT theme
+            judgmentalgiraffe.com
+            Updated 7/8/13
+        !-->
+        
+        <meta name="text:Owner URL" content="owner.tumblr.com" />
+        <meta name="text:RP URL" content="rpgroup.tumblr.com" />
+        <meta name="text:Custom Link URL" content="" />
+        <meta name="text:Custom Link Label" content="Custom link here" />
+        <meta name="text:Bio" content="Turpis massa augue ultricies parturient placerat turpis elementum, porta ultricies augue non. Pellentesque placerat rhoncus augue? Montes scelerisque rhoncus vel aenean adipiscing!" />
+        <meta name="if:Slytherin" content="1"/>
+        <meta name="if:Ravenclaw" content="0"/>
+        <meta name="if:Gryffindor" content="0"/>
+        <meta name="if:Hufflepuff" content="0"/>
+        <meta name="image:Sidebar Image" content=""/>
+
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+        
+            body {
+                line-height: 1.3em;
+                text-align: justify;
+                font: 8pt sans-serif;
+            }
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+                a:hover {
+                    text-decoration: underline;
+                }
+            blockquote {
+                margin: 0;
+                padding-left: .5em;
+                border-left: 2px solid #000;
+            }
+            table {
+                margin: auto;
+                font: inherit;
+                line-height: inherit;
+                color: inherit;
+                text-align: inherit;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                font-family: georgia, times new roman, serif;
+                font-weight: normal;
+            }
+            h1 {
+                font-size: 30pt;
+                line-height: .8;
+                margin-bottom: 5px;
+            }
+            h3 {
+                font-size: 15pt;
+                margin-top: .5em;
+            }
+
+            #sidebar {
+                position: fixed;
+                left: 50%;
+                margin-left: -410px;
+                bottom: 50px;
+                width: 270px;
+            }
+                #header {
+                    text-align: center;
+                    margin: 1em 0 .5em 0;
+                }
+                    #desc {
+                        font: 9pt sans-serif;
+                    }
+                #sidebarimage {
+                    width: 270px;
+                    height: auto;
+                    border-radius: 5px;
+                    margin: 10px 0;
+                }
+                #menu {
+                    margin: auto;
+                    vertical-align: middle;
+                    width: 270px;
+                }
+                    #menu a:hover {
+                        text-decoration: none;
+                    }
+                    #menu td {
+                        padding: 0;
+                    }
+                        .menu-item {
+                            margin-bottom: 2px;
+                            padding: 1px 7px;
+                            width: 90px;
+                        }
+                    #amp {
+                        width: 56px;
+                        font-size: 45pt;
+                        font-family: georgia, times new roman, serif;
+                        text-align: center;
+                    }
+                #bio {
+                    font-size: 7pt;
+                    line-height: 1em;
+                    text-align: justify;
+                }
+                #footer {
+                    font-size: 7pt;
+                    text-align: center;
+                    margin: auto;
+                }
+
+            #posts {
+                width: 510px;
+                position: absolute;
+                left: 50%;
+                margin-left: -100px;
+            }
+                .postbody {
+                    padding: 5px;
+                    margin: 20px 0 0 0;
+                }
+                    .postbody img {
+                        border-radius: 5px;
+                    }
+                    .notecount {
+                        padding: 10px;
+                        margin: 0 0 5px 5px;
+                        border-radius: 5px;
+                        float: right;
+                    }
+                        .notecount h3 {
+                            margin: 0;
+                            padding: 0;
+                        }
+                .tags {
+                    font-size: 90%;
+                    padding: 5px;
+                    margin: 0;
+                    text-align: left;
+                    border-radius: 0 0 5px 5px;
+                }
+            #notes {
+                font-size: 7pt;
+                width: 500px;
+                text-align: justify;
+            }
+                #notes ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                }
+                    #notes li {
+                        list-style-type: none;
+                    }
+                #notes img {
+                    vertical-align: middle;
+                }
+            
+            .center {
+                text-align: center;
+            }
+            .chat {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+            .label {
+                font-weight: bold;
+            }
+            .left {
+                text-align: left;
+            }
+            .right {
+                text-align: right;
+            }
+            
+            {block:IfGryffindor}
+                body {
+                    background: #4D1C1C;
+                    background-repeat: no-repeat;
+                }
+                #header {
+                    color: #DECD80;
+                    opacity: .6;
+                }
+                #sidebarimage {
+                    opacity: .6;
+                }
+                .menu-item {
+                    background: #DECD80;
+                    opacity: .3;
+                }
+                    .menu-item:hover {
+                        opacity: .6;
+                    }
+                #amp {
+                    opacity: .4;
+                    color: #DECD80;
+                }
+                #bio {
+                    color: #DECD80;
+                    opacity: .6;
+                }
+                #footer {
+                    color: #ab9a57;
+                    opacity: .4;
+                }
+                    #footer a {
+                        color: #DECD80;
+                    }
+                .postbody {
+                    background: #DECD80;
+                    opacity: .6;
+                }
+                    .postbody a {
+                        opacity: .7;
+                    }
+                .notecount {
+                    color: #DECD80;
+                    background: #000;
+                    opacity: .95;
+                }
+                .tags {
+                    background: #DECD80;
+                    opacity: .4;
+                }
+                #notes {
+                    color: #DECD80;
+                    opacity: .5;
+                }
+                    #notes blockquote {
+                        border-color: #DECD80;
+                    }
+            {/block:IfGryffindor}
+            {block:IfHufflepuff}
+                body {
+                    background: #EBE542;
+                    background-repeat: no-repeat;
+                    color: #000;
+                }
+                #header {
+                    color: #000;
+                    opacity: .5;
+                }
+                #sidebarimage {
+                    opacity: .7;
+                }
+                .menu-item {
+                    background: #fff;
+                    opacity: .5;
+                }
+                    .menu-item:hover {
+                        opacity: .7;
+                    }
+                #amp {
+                    opacity: .5;
+                    color: #000;
+                }
+                #bio {
+                    color: #000;
+                    opacity: .6;
+                }
+                #footer {
+                    color: #888;
+                    opacity: .5;
+                }
+                    #footer a {
+                        color: #000;
+                    }
+                .postbody {
+                    background: #fff;
+                    opacity: .7;
+                }
+                    .postbody a {
+                        opacity: .6;
+                    }
+                .notecount {
+                    color: #fff;
+                    background: #000;
+                    opacity: .95;
+                }
+                .tags {
+                    background: #fff;
+                    opacity: .3;
+                }
+                #notes {
+                    color: #fff;
+                    opacity: .4;
+                }
+            {/block:IfHufflepuff}
+            {block:IfRavenclaw}
+                body {
+                    background: #21212E;
+                    background-repeat: no-repeat;
+                }
+                #header {
+                    color: #BF9957;
+                    opacity: .6;
+                }
+                #sidebarimage {
+                    opacity: .6;
+                }
+                .menu-item {
+                    background: #BF9957;
+                    opacity: .4;
+                }
+                    .menu-item:hover {
+                        opacity: .6;
+                    }
+                #amp {
+                    opacity: .4;
+                    color: #BF9957;
+                }
+                #bio {
+                    color: #BF9957;
+                    opacity: .6;
+                }
+                #footer {
+                    color: #a88241;
+                    opacity: .4;
+                }
+                    #footer a {
+                        color: #BF9957;
+                    }
+                .postbody {
+                    background: #BF9957;
+                    opacity: .6;
+                }
+                    .postbody a {
+                        opacity: .6;
+                    }
+                .notecount {
+                    color: #BF9957;
+                    background: #000;
+                    opacity: .95;
+                }
+                .tags {
+                    background: #BF9957;
+                    opacity: .4;
+                }
+                #notes {
+                    color: #BF9957;
+                    opacity: .5;
+                }
+                    #notes blockquote {
+                        border-color: #BF9957;
+                    }
+            {/block:IfRavenclaw}
+            {block:IfSlytherin}
+                body {
+                    background: #222713;
+                    background-repeat: no-repeat;
+                }
+                #header {
+                    color: #fff;
+                    opacity: .5;
+                }
+                #sidebarimage {
+                    opacity: .5;
+                }
+                .menu-item {
+                    background: #fff;
+                    opacity: .3;
+                }
+                    .menu-item:hover {
+                        opacity: .5;
+                    }
+                #amp {
+                    opacity: .3;
+                    color: #fff;
+                }
+                #bio {
+                    color: #fff;
+                    opacity: .5;
+                }
+                #footer {
+                    color: #888;
+                    opacity: .3;
+                }
+                    #footer a {
+                        color: #fff;
+                    }
+                .postbody {
+                    background: #fff;
+                    opacity: .5;
+                }
+                    .postbody a {
+                        opacity: .6;
+                    }
+                .notecount {
+                    color: #fff;
+                    background: #000;
+                    opacity: .95;
+                }
+                .tags {
+                    background: #fff;
+                    opacity: .3;
+                }
+                #notes {
+                    color: #fff;
+                    opacity: .4;
+                }
+                    #notes blockquote {
+                        border-color: #fff;
+                    }
+            {/block:IfSlytherin}
+        
+        </style>
+        <script>
+            window.onload=function(){
+                var canvas = document.getElementById("bg");
+                var context = canvas.getContext("2d");
+                
+                canvas.width=screen.width;
+                canvas.height=screen.height;
+                
+                context.beginPath();
+                context.moveTo(0,0);
+                context.lineTo(screen.width,0);
+                context.lineTo(screen.width,screen.height);
+                context.lineTo(0,screen.height);
+                context.lineTo(0,0);
+                context.closePath();
+
+                var grd=context.createRadialGradient(canvas.width/2,-canvas.width*.25,0,canvas.width/2,-canvas.width*.25,canvas.height+canvas.width*.25);
+                {block:IfGryffindor}
+                    grd.addColorStop(0,"#A63F3F");
+                    grd.addColorStop(1,"#4D1C1C");
+                {/block:IfGryffindor}
+                {block:IfHufflepuff}
+                    grd.addColorStop(0,"#FFFB8A");
+                    grd.addColorStop(1,"#EBE542");
+                {/block:IfHufflepuff}
+                {block:IfRavenclaw}
+                    grd.addColorStop(0,"#282651");
+                    grd.addColorStop(1,"#21212E");
+                {/block:IfRavenclaw}
+                {block:IfSlytherin}
+                    grd.addColorStop(0,"#4D5439");
+                    grd.addColorStop(1,"#222713");
+                {/block:IfSlytherin}
+
+                context.fillStyle = grd;
+                context.fill();
+                
+                var backURL=canvas.toDataURL();
+                document.body.style.backgroundImage="url('"+backURL+"')";
+            };
+        </script>
+    </head>
+    <body>
+        <canvas id="bg" style="display:none"></canvas>
+    
+        <div id="sidebar">
+            <div id="header">            
+                <h1><a href="/">{Title}</a></h1>
+                <div id="desc">
+                    {Description}
+                </div>
+            </div>
+            <a href="/"><img id="sidebarimage" src="{image:Sidebar image}" /></a>
+            <table id="menu">
+                <tr>
+                    <td>
+                        <a href="/"><div class="menu-item right">home</div></a>
+                        <a href="/archive"><div class="menu-item right">archive</div></a>
+                        <a href="{text:Custom Link URL}"><div class="menu-item right">{text:Custom Link Label}</div></a>
+                    </td>
+                    <td id="amp" class="center">
+                        <span class="amp">&amp;</span>
+                    </td>
+                    <td>
+                        {block:AskEnabled}
+                            <a href="/ask"><div class="menu-item left">owl me</div></a>
+                        {/block:AskEnabled}
+                        <a href="{text:RP URL}"><div class="menu-item left">hogwarts</div></a>
+                        <a href="{text:Owner URL}"><div class="menu-item left">owner</div></a>
+                    </td>
+                </tr>
+            </table>
+
+            <p id="bio" class="center">
+                {text:Bio}
+            </p>
+            
+            <p id="footer">
+                {block:PreviousPage}<a href="{PreviousPage}">{/block:PreviousPage}&#171; previous{block:PreviousPage}</a>{/block:PreviousPage}
+                | <a href="http://www.judgmentalgiraffe.com/">theme</a> |
+                {block:NextPage}<a href="{NextPage}">{/block:NextPage}next &#187;{block:NextPage}</a>{/block:NextPage}
+            </p>
+        </div>
+                
+        <div id="posts">
+            {block:Posts}
+                <div class="post">
+                    <div class="postbody">
+
+                        {block:Date}
+                            <a href="{Permalink}">
+                                <div class="notecount">
+                                    <h3>{NoteCount}</h3>
+                                </div>
+                            </a>
+                        {/block:Date}
+                        
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        
+                        {block:Link}
+                            <h3><a href="{URL}" class="link" {Target}>{Name} &#187;</a></h3>
+                        {/block:Link}
+                        
+                        {block:Answer}
+                            <h3><a href="{Permalink}">{Asker} asked:</a></h3>
+                        {/block:Answer}
+
+                        {block:Text}
+                            {Body}
+                        {/block:Text}
+
+                        {block:Photo}
+                            <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            <p>{Photoset-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photoset}
+
+                        {block:Quote}
+                            <h3>&ldquo;{Quote}&rdquo;</h3>
+                            {block:Source}
+                                <p class="right">&mdash; {Source}</p>
+                            {/block:Source}
+                        {/block:Quote}
+
+                        {block:Link}
+                            {block:Description}
+                                {Description}
+                            {/block:Description}
+                        {/block:Link}
+
+                        {block:Chat}
+                            <p>
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                            </p>
+                        {/block:Chat}
+
+                        {block:Video}
+                            <p>{Video-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Video}
+
+                        {block:Audio}
+                            <p>{AudioPlayerBlack}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Audio}
+                        
+                        {block:Answer}
+                            <blockquote>{Question}</blockquote>
+                            <p>{Answer}</p>
+                        {/block:Answer}
+                    </div>
+                    
+                    {block:HasTags}
+                        <div class="tags">
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                </div>
+                <div id="notes">
+                    {PostNotes}
+                </div>
+            {/block:Posts}
+        </div>
+
+    </body>
+</html>

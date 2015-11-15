@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            FAIR TRADE theme
+            judgmentalgiraffe.com
+            Updated 7/8/2013
+        !-->
+        
+        <meta name="if:Use Link 1" content="0"/>
+        <meta name="text:Link 1 title" content="Link 1"/>
+        <meta name="text:Link 1 URL" content="http://link 1"/>
+        <meta name="if:Use Link 2" content="0"/>
+        <meta name="text:Link 2 title" content="Link 2"/>
+        <meta name="text:Link 2 URL" content="http://link 2"/>
+        <meta name="if:Use Link 3" content="0"/>
+        <meta name="text:Link 3 title" content="Link 3"/>
+        <meta name="text:Link 3 URL" content="http://link 3"/>
+        
+        <title>{Title}</title>
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        <script src="//use.edgefonts.net/bebas-neue.js"></script>
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+            
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
+            blockquote {
+                margin-right: 0;
+            }
+            body {
+                font-size: 8pt;
+                font-family: verdana, arial, sans-serif;
+                line-height: 2em;
+                text-align: center;
+                margin: auto;
+                color: #333;
+            }
+            h1,h2,h3,h4,h5,h6 {
+                font-family: bebas-neue, sans-serif;
+                line-height: 1em;
+                font-weight: 400;
+            }
+            h1 {
+                font-size: 35pt;
+            }
+            h2 {
+                font-size: 30pt;
+            }
+            h3 {
+                font-size: 25pt;
+                margin: 20px 0;
+            }
+            img {
+                padding: 1px;
+                border: 1px solid black;
+            }
+            li.menu {
+                padding: 0;
+                margin: 0;
+            }
+            table {
+                font: inherit;
+                color: inherit;
+                text-align: inherit;
+                background: inherit;
+                margin: auto;
+            }
+            td {
+                padding: 0;
+                margin: 0;
+                vertical-align: top;
+            }
+            ul.chat {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+            ul.menu {
+                list-style-type: none;
+                font-family: bebas-neue, sans-serif;
+                font-size: 25pt;
+                padding: 0;
+                line-height: 1;
+            }
+            #desc {
+                font-size: .9em;
+                text-align: justify;
+                line-height: 1.6;
+            }
+            #footer {
+                margin: auto;
+                text-align: center;
+            }
+            #title {
+                margin: 20px auto;
+            }
+            .label {
+                font-weight: bold;
+            }
+            #nav {
+                font-size: 18pt;
+                font-family: bebas-neue, sans-serif;
+                margin-top: 20px;
+                text-align: center;
+            }
+            #notes {
+                color: gray;
+                font-size: 7pt;
+                text-align: left;
+                margin-top: 50px;
+            }
+            #post {
+                width: 500px;
+                text-align: justify;
+                margin: 100px auto;
+                padding: 0;
+            }
+            #postfooter {
+                color: gray;
+                margin: auto;
+                font-size: 7pt;
+            }
+            #postfooter {
+                text-align: center;
+            }
+            #posts {
+                width: 500px;
+                position: absolute;
+                left: 50%;
+                margin-left: -425px;
+            }
+            .quote {
+                font-size: 9pt;
+            }
+            .source {
+                text-align: right;
+            }
+            #sidebar {
+                width: 280px;
+                text-align: left;
+                position: fixed;
+                left: 50%;
+                top: 50px;
+                margin-left: 145px;
+            }
+            {CustomCSS}
+        </style>
+    </head>
+    <body>
+        <div id="sidebar">
+            <h1 id="title"><a href="/">{Title}</a></h1>
+            {block:Description}
+                <p id="desc">
+                    {Description}
+                </p>
+            {/block:Description}
+            <ul class="menu">
+                <li class="menu">
+                    <a href="/">Home</a>
+                </li>
+                {block:AskEnabled}
+                    <li class="menu">
+                        <a href="/ask">Ask</a>
+                    </li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                    <li class="menu">
+                        <a href="/submit">Submit</a>
+                    </li>
+                {/block:SubmissionsEnabled}
+                {block:HasPages}
+                    {block:Pages}
+                        <li class="menu">
+                            <a href="{URL}">{Label}</a>
+                        </li>
+                    {/block:Pages}
+                {/block:HasPages}
+                <li class="menu">
+                    <a href="/archive">Archive</a>
+                </li>
+                {block:ifUseLink1}
+                    <li class="menu">
+                        <a href="{text:Link 1 URL}">{text:Link 1 title}</a>
+                    </li>
+                {/block:ifUseLink1}
+                {block:ifUseLink2}
+                    <li class="menu">
+                        <a href="{text:Link 2 URL}">{text:Link 2 title}</a>
+                    </li>
+                {/block:ifUseLink2}
+                {block:ifUseLink3}
+                    <li class="menu">
+                        <a href="{text:Link 3 URL}">{text:Link 3 title}</a>
+                    </li>
+                {/block:ifUseLink3}
+                <li class="menu">
+                    <a href="http://www.judgmentalgiraffe.com/">Theme</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="posts">
+            {block:Posts}
+                <div id="post">
+                    {block:Text}
+                        {block:Title}
+                            <h3><a href="{Permalink}">{Title}</a></h3>
+                        {/block:Title}
+                        {Body}
+                    {/block:Text}
+
+                    {block:Photo}
+                        <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Photo}
+
+                    {block:Photoset}
+                        <p>{Photoset-500}</p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Photoset}
+
+                    {block:Quote}
+                        <p class="quote">"{Quote}"</p>
+                        {block:Source}
+                            <p class="source">&mdash; {Source}</p>
+                        {/block:Source}
+                    {/block:Quote}
+
+                    {block:Link}
+                        <h3><a href="{URL}" class="link" {Target}>{Name}</a></h3>
+                        {block:Description}
+                            {Description}
+                        {/block:Description}
+                    {/block:Link}
+
+                    {block:Chat}
+                        <p>
+                            {block:Title}
+                                <h3><a href="{Permalink}">{Title}</a></h3>
+                            {/block:Title}
+                            <ul class="chat">
+                                {block:Lines}
+                                    <li class="{Alt} user_{UserNumber}">
+                                        {block:Label}
+                                            <span class="label">{Label}</span>
+                                        {/block:Label}
+                                        {Line}
+                                    </li>
+                                {/block:Lines}
+                            </ul>
+                        </p>
+                    {/block:Chat}
+
+                    {block:Video}
+                        <p>{Video-500}</p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Video}
+
+                    {block:Audio}
+                        <p>{AudioPlayerBlack}</p>
+                        {block:Caption}
+                            {Caption}
+                        {/block:Caption}
+                    {/block:Audio}
+
+                    {block:Answer}
+                        <h3><a href="{Permalink}">{Asker} asked:</a></h3>
+                        <blockquote>{Question}</blockquote>
+                        <p>{Answer}</p>
+                    {/block:Answer}
+                    
+                    <div id="postfooter">
+                        {block:HasTags}
+                            {block:Tags}
+                                <a href="{TagURL}">{Tag}</a>&nbsp;&nbsp;
+                            {/block:Tags}
+                        {/block:HasTags}
+                        <a href="{Permalink}">
+                            {TimeAgo}
+                            {block:NoteCount}
+                                with {NoteCountWithLabel}
+                            {/block:NoteCount}
+                        </a>
+                    </div>
+                    
+                    <div id="notes">
+                        {PostNotes}
+                    </div>
+                    
+                </div>
+            {/block:Posts}
+            
+            <p id="nav">
+                {block:PreviousPage}
+                    <a href="{PreviousPage}">&#171; previous</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                {/block:PreviousPage}
+
+                {block:NextPage}
+                    <a href="{NextPage}">next &#187;</a>
+                {/block:NextPage}
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            RAGGED RIGHT theme
+            judgmentalgiraffe.com
+            Updated 2/15/2013
+        !-->
+        <title>{Title}</title>
+        
+        <meta name="text:Bio" content="Turpis massa augue ultricies parturient placerat turpis elementum, porta ultricies augue non. Pellentesque placerat rhoncus augue? Montes scelerisque rhoncus vel aenean adipiscing!" />
+        
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+        
+            body {
+                font: 8pt sans-serif;
+                background: #666;
+                color: #111;
+                text-align: center;
+            }
+            a {
+                color: #D63838;
+                text-decoration: none;
+            }
+                a:hover {
+                    text-decoration: underline;
+                }
+            h1, h2, h3, h4 {
+                font-weight: bold;
+                letter-spacing: -.25ex;
+            }
+            h1 {
+                font-size: 4em;
+                margin-bottom: 0;
+            }
+            h2 {
+                font-size: 3em;
+                margin-top: -.5em;
+                margin-bottom: 0;
+            }
+            h3 {
+                font-size: 2em;
+                margin-top: .2em;
+                margin-bottom: .5em;
+            }
+            blockquote {
+                margin: 1em 0;
+                border-left: 3px dotted #D63838;
+                padding-left: 1em;
+            }
+
+            #sidebar {
+                position: fixed;
+                left: -450px;
+                top: 200px;
+                margin-left: 50%;
+                width: 300px;
+            }
+                #header a {
+                    color: #111;
+                }
+                #bio {
+                    text-align: left;
+                    margin: auto;
+                }
+                #menu {
+                    font-weight: bold;
+                    letter-spacing: -.25ex;
+                    font-size: 1.5em;
+                }
+                    #menu a {
+                        color: #111;
+                    }
+            #posts {
+                position: absolute;
+                left: 50%;
+                width: 520px;
+                margin-left: -100px;
+                line-height: 1.5em;
+                text-align: left;
+            }
+                .post {
+                    background: #111;
+                    color: white;
+                    padding: 5px;
+                    margin: 30px 0;
+                }
+                    .date {
+                        margin-top: 0;
+                    }
+                    .postbody {
+                        padding: 5px;
+                        background: white;
+                        color: #111;
+                    }
+                        ul.chat {
+                            padding: 0;
+                            padding: 0;
+                            list-style-type: none;
+                        }
+                        .label {
+                            font-weight: bold;
+                        }
+                        .quote {
+                            font-size: 1.2em;
+                        }
+                        .source {
+                            text-align: right;
+                        }
+                    .tags {
+                        margin-top: .5em;
+                    }
+                #notes {
+                    margin-top: -25px;
+                }
+                    #notes ol {
+                        list-style-type: none;
+                    }
+                    #notes a {
+                        color: #111;
+                    }
+                    #notes blockquote {
+                        border-color: #111;
+                    }
+            
+
+        </style>
+        <script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+    </head>
+    <body>
+        <div id="sidebar">
+            <div id="header">
+                <h1><a href="/">{Title}</a></h1>
+                
+                {block:Description}
+                    <h2>{Description}</h2>
+                {/block:Description}
+            </div>
+            
+            <div id="bio">
+                <p>{text:Bio}</p>
+            </div>
+            
+            <div id="menu">
+                <a href="/">home</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/archive">archive</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/ask">ask</a>{/block:AskEnabled}{block:SubmissionsEnabled}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="/submit">submit</a>{/block:SubmissionsEnabled}{block:HasPages}{block:Pages}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{URL}">{Label}</a>{/block:Pages}{/block:HasPages}&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.judgmentalgiraffe.com/">theme</a>
+            </div>
+        </div>
+        
+        <div id="posts">
+            {block:Posts}
+                <div class="post">
+
+                    {block:Title}
+                        <h3><a href="{Permalink}">{Title}</a></h3>
+                    {/block:Title}
+                    {block:Link}
+                        <h3><a href="{URL}">{Name} &#187;</a></h3>
+                    {/block:Link}
+                    {block:Date}<p class="date"><a href="{Permalink}">{ShortMonth} {DayOfMonth}, {Year}</a>{block:NoteCount} with <a href="{Permalink}">{NoteCountWithLabel}</a>{/block:NoteCount}</p>{/block:Date}
+
+                    <div class="postbody">
+                        {block:Text}
+                            {Body}
+                        {/block:Text}
+
+                        {block:Photo}
+                            <p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            <p>{Photoset-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Photoset}
+
+                        {block:Quote}
+                            <p class="quote">"{Quote}"</p>
+                            {block:Source}
+                                <p class="source">&mdash; {Source}</p>
+                            {/block:Source}
+                        {/block:Quote}
+
+                        {block:Link}
+                            {block:Description}
+                                {Description}
+                            {/block:Description}
+                        {/block:Link}
+
+                        {block:Chat}
+                            <p>
+                                <ul class="chat">
+                                    {block:Lines}
+                                        <li class="{Alt} user_{UserNumber}">
+                                            {block:Label}
+                                                <span class="label">{Label}</span>
+                                            {/block:Label}
+                                            {Line}
+                                        </li>
+                                    {/block:Lines}
+                                </ul>
+                            </p>
+                        {/block:Chat}
+
+                        {block:Video}
+                            <p>{Video-500}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Video}
+
+                        {block:Audio}
+                            <p>{AudioPlayerBlack}</p>
+                            {block:Caption}
+                                {Caption}
+                            {/block:Caption}
+                        {/block:Audio}
+                    </div>
+                    
+                    {block:HasTags}
+                        <div class="tags">
+                            {block:Tags}
+                                #<a href="{TagURL}">{Tag}</a>
+                            {/block:Tags}
+                        </div>
+                    {/block:HasTags}
+                </div>
+                {block:PostNotes}
+                    <div id="notes">
+                        {PostNotes}
+                    </div>
+                {/block:PostNotes}
+            {/block:Posts}
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html>
+    <head>
+        <!--
+            JP theme
+            judgmentalgiraffe.com
+            Updated 7/8/2013
+        !-->
+        <title>{Title}</title>
+        
+        <meta name="image:Sidebar image" content=""/>
+		<meta name="text:Sidebar image width" content="250px"/>
+		<meta name="color:Background" content="#292929"/>
+		<meta name="color:Text" content="#ffffff"/>
+		<meta name="color:Headings" content="#dfdf6c"/>
+		<meta name="color:Tags" content="#6d5974"/>
+		
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}
+            <meta name="description" content="{MetaDescription}" />
+        {/block:Description}
+        <style type="text/css">
+            body {
+                background: {color:Background};
+                color: {color:Text};
+                margin: auto;
+                font-size: 10pt;
+                font-family: times new roman, serif;
+            }
+            a {
+                background: {color:Text};
+                color: {color:Background};
+                text-decoration: none;
+            }
+            a:hover {
+                background: {color:Background};
+                color: {color:Text};
+            }
+            h1, h2, h3, h4 {
+                font-variant: small-caps;
+                letter-spacing: -1px;
+                font-weight: bold;
+            }
+            h2 {
+                font-size: 2em;
+                text-align: center;
+            }
+            h3 a {
+                background: {color:Headings};
+                color: {color:Background};
+                font-size: 1.3em;
+            }
+                h3 a:hover {
+                    background: {color:Background};
+                    color: {color:Headings};
+                }
+                blockquote {
+                    margin: 3px;
+                    padding: 3px;
+                    border-left: 2px solid {color:text};
+            }
+              
+            #sidebar {
+                position: fixed;
+                right: 50%;
+                top: 25px;
+                margin-right: 150px;
+                text-align: justify;
+                line-height: 1.4;
+                color: {color:Text};
+                width: {text:Sidebar image width};
+                font-size: .9em;
+            }
+                #imga {
+                    background: {color:Background};
+                }
+                    #sidebarimage {
+                        border: none;
+                        opacity: .8;
+                        margin: 0;
+                        padding: 0;
+                        width: {text:Sidebar image width};
+                        height: auto;
+                    }
+                ul.menu {
+                    margin: 0;
+                    list-style-type: none;
+                    padding: 0;
+                    text-align: center;
+                }
+                li.menu {
+                    text-align: center;
+                    background: {color:Text};
+                    margin: 2px 0 0 0;
+                    width: {text:Sidebar image width};
+                    padding: 0;
+                    font-variant: small-caps;
+                    letter-spacing: -1px;
+                    font-weight: bold;
+                    font-size: 1.3em;
+                }
+                    li.menu:hover {
+                        background: {color:Headings};
+                    }
+                #nav {
+                    text-align: center;
+                }
+            #posts {
+                font-size: 10pt;
+                line-height: 1.4em;
+                text-align: justify;
+                width: 500px;
+                position: absolute;
+                top: 50px;
+                left: 50%;
+                margin-left: -100px;
+            }
+                .post {
+                    margin-top: 100px;
+                }
+                    .audioplayer {
+                        opacity: .8;
+                    }
+                    .footnote {
+                        font-size: .9em;
+                        margin-bottom: 50px;
+                    }
+                        a.tag {
+                            background: {color:Tags};
+                            color: {color:Background};
+                            text-decoration: none;
+                        }
+                            a.tag:hover {
+                                color: {color:Tags};
+                                background: {color:Background}
+                            }
+                        .notes {
+                            width: 400px;
+                            margin: auto;
+                            font-size: .9em;
+                        }
+                            .notes ol {
+                                list-style-type: none;
+                                padding: 0;
+                            }
+                    ul.chat {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                    }
+                    .label {
+                        font-weight: bold;
+                    }
+                    .quote {
+                        font-size: 1.2em;
+                    }
+                    .source {
+                        text-align: right;
+                    }
+
+        </style>
+    </head>
+    <body>
+		<div id="sidebar">
+			<h2><a href="/">{Title}</a></h2>
+			<a id="imga" href="/"><img id="sidebarimage" src="{image:Sidebar image}"></a>
+			<p id="bio">
+				{Description}
+			</p>
+			<ul class="menu">
+				<a href="/archive"><li class="menu">Archive</li></a>
+				{block:AskEnabled}
+    				<a href="/ask"><li class="menu">Ask</li></a>
+				{/block:AskEnabled}
+				{block:SubmissionsEnabled}
+				    <a href="/submit"><li class="menu">Submit</li></a>
+				{/block:SubmissionsEnabled}
+				{block:HasPages}
+				    {block:Pages}
+				        <a href="{URL}"><li class="menu">{Label}</li></a>
+				    {/block:Pages}
+				{/block:HasPages}
+				<a href="http://www.judgmentalgiraffe.com/"><li class="menu">Theme</li></a>
+			</ul>
+			<p id="nav">
+				{block:PreviousPage}
+					<a href="{PreviousPage}">&#171; Previous</a>
+				{/block:PreviousPage}
+				
+				{block:NextPage}
+					<a href="{NextPage}">Next &#187;</a>
+				{/block:NextPage}
+			</p>
+		</div>
+		<div id="posts">
+			{block:Posts}
+				<div class="post">
+					{block:Text}
+						{block:Title}
+							<h3><a href="{Permalink}">{Title}</a></h3>
+						{/block:Title}
+						{Body}
+					{/block:Text}
+
+					{block:Photo}
+						<p><img src="{PhotoURL-500}" alt="{PhotoAlt}"/></p>
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Photo}
+
+					{block:Photoset}
+						<p>{Photoset-500}</p>
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Photoset}
+
+					{block:Quote}
+						<p class="quote">&ldquo;{Quote}&rdquo;</p>
+						{block:Source}
+							<p class="source">&mdash; {Source}</p>
+						{/block:Source}
+					{/block:Quote}
+
+					{block:Link}
+						<h3><a href="{URL}" class="link">{Name} &#187;</a></h3>
+						{block:Description}
+							{Description}
+						{/block:Description}
+					{/block:Link}
+
+					{block:Chat}
+						<p>
+							{block:Title}
+								<h3><a href="{Permalink}">{Title}</a></h3>
+							{/block:Title}
+							<ul class="chat">
+								{block:Lines}
+									<li class="{Alt} user_{UserNumber}">
+										{block:Label}
+											<span class="label">{Label}</span>
+										{/block:Label}
+										{Line}
+									</li>
+								{/block:Lines}
+							</ul>
+						<p>
+					{/block:Chat}
+
+					{block:Video}
+						<p>{Video-500}</p>
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Video}
+
+					{block:Audio}
+						<p class="audioplayer">{AudioPlayerWhite}</p>
+						{block:Caption}
+							{Caption}
+						{/block:Caption}
+					{/block:Audio}
+					
+					{block:Answer}
+					    <h3><a href="{Permalink}">{Asker} asked:</a></h3>
+					    <blockquote>{Question}</blockquote>
+					    <p>{Answer}</p>
+                    {/block:Answer}
+				</div>
+
+				<div class="footnote">
+				    <div class="tags">
+					    <p>
+                            {block:NoteCount}<a href="{Permalink}">{NoteCountWithLabel}</a>&nbsp;&nbsp;&nbsp;{/block:NoteCount}
+    					    {block:HasTags}
+							    {block:Tags}
+								    <a class="tag" href="{TagURL}">{Tag}</a>
+							    {/block:Tags}
+    					    {/block:HasTags}
+					    </p>
+					</div>
+					<div class="notes">
+					    {block:PostNotes}
+						    {PostNotes}
+					    {/block:PostNotes}
+				    </div>
+				</div>
+			{/block:Posts}
+		</div>
+    </body>
+</html>
