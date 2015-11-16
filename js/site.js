@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
     /* GALLERIES */
 
 	// onClick preview image
