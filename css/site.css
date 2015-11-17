@@ -201,6 +201,9 @@ a {
 		margin-right: -150px;
 		transition: .5s;
 	}
+		#ink .kenzie {
+			font-family: "letter-gothic-std","Roboto",sans-serif;
+		}
 		#ink .hidden {
 			color: #8172B0;
 		}
