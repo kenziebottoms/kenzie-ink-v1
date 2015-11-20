@@ -130,7 +130,7 @@ a {
 		font-size: 3em;
 	}
 .kenzie h1, .kenzie h2, .kenzie h3, .kenzie h4, .kenzie h5, h1 .kenzie, h2 .kenzie, h3 .kenzie, h4 .kenzie, h5 .kenzie {
-	font-family: sans-serif;
+	font-family: "letter-gothic-std","Roboto",sans-serif;
 	font-weight: 100;
 	margin: 0;
 }
@@ -177,7 +177,7 @@ a {
 	font-size: 40pt;
 }
 	#kenzie {
-		font-family: sans-serif;
+		font-family: "letter-gothic-std","Roboto",sans-serif;
 		padding-left: 50%;
 		margin-left: -210px;
 		text-align: left;
@@ -206,6 +206,9 @@ a {
 		margin-right: -150px;
 		transition: .5s;
 	}
+		#ink .kenzie {
+			font-family: "letter-gothic-std","Roboto",sans-serif;
+		}
 		#ink .hidden {
 			color: #8172B0;
 		}
