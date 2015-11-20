@@ -1,0 +1,17 @@
+    {% include head.html %}
+        <script src="/js/tbox.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <div class="tbox">
+                <p><a href="/kenzie">&laquo; back</a></p>
+                {{ content }}
+            </div>
+            <textarea id="text" rows="20"></textarea>
+            <div id="wordcount">0</div>
+            <div id="barcontainer">
+                <div id="progressbar"></div>
+            </div>
+        </div>
+    </body>
+</html>

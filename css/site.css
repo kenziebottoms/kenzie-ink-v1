@@ -137,6 +137,10 @@ a {
 	.kenzie h1 {
 		font-size: 3em;
 	}
+#container {
+	width: 100%;
+	text-align: center;
+}
 #kenzie, #ink {
 	color: #fff;
 	padding-top: 10px;
@@ -165,6 +169,7 @@ a {
 	margin: 100px auto;
 	font-size: .8em;
 	line-height: 1.8;
+	text-align: left;
 }
 #kenzie-block {
 	background: #534741;
@@ -224,6 +229,7 @@ a {
 		right: 0;
 	}
 		#bio {
+			text-align: left;
 			width: 25%;
 			margin: 10% auto;
 			min-width: 250px;
@@ -285,6 +291,7 @@ a {
 	width: 50%;
 	color: #C9C1BD;
 	position: absolute;
+	text-align: left;
 }
 	#sidebar.ink {
 		background: #8172B0;
@@ -473,3 +480,44 @@ a {
 			margin: 10px 0 20px 0;
 			font-size: 1.1em;
 		}
+/* tBOX */
+#text {
+	background: transparent;
+    margin: 10px auto;
+    padding: 15px 25px;
+    font: 16pt arial;
+    overflow: scroll;
+    border-color: #aaa;
+    border-width: 1px 0;
+    outline: none;
+    resize: none;
+    font: inherit;
+    font-size: .9em;
+    width: 750px;
+    text-align: left;
+}
+.tbox {
+	margin: 50px auto 0 auto;
+}
+#wordcount {
+    color: #FF9955;
+    text-align: center;
+}
+#barcontainer {
+    border: 1px solid #bbb;
+    border-width: 1px 0 0 1px;
+    width: 750px;
+    margin: 20px auto;
+    padding: 1px;
+}
+#progressbar {
+    width: 0px;
+    background: #71B160;
+    height: 20px;
+}
+input[type=number] {
+	font: 12pt sans-serif;
+	padding: 3px 5px;
+	color: inherit;
+	font-weight: 100;
+}
