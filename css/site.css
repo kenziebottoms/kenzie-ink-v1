@@ -218,6 +218,12 @@ a {
 			font-size: 50pt;
 			background: #fff;
 		}
+@media (max-width: 600px) {
+	.content, .sidebar {
+		position: static;
+		width: 100%;
+	}
+}
 .content {
 	position: absolute;
 	width: 50%;
