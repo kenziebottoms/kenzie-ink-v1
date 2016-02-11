@@ -218,7 +218,7 @@ a {
 			font-size: 50pt;
 			background: #fff;
 		}
-@media (max-width: 600px) {
+@media handheld {
 	.content, .sidebar {
 		position: static;
 		width: 100%;
