@@ -218,15 +218,6 @@ a {
 			font-size: 50pt;
 			background: #fff;
 		}
-<<<<<<< HEAD
-@media handheld {
-	.content, .sidebar {
-		position: static;
-		width: 100%;
-	}
-}
-=======
->>>>>>> parent of 489d6b5... mobile opt
 .content {
 	position: absolute;
 	width: 50%;
