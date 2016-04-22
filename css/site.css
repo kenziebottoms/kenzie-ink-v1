@@ -359,10 +359,10 @@ a {
 		.resume-block {
 			margin: 0 0 40px 0;
 		}
-		.resume-block h3 {
-			display: inline;
-			margin-right: 4px;
-		}
+			.resume-block h3 {
+				display: inline;
+				margin-right: 4px;
+			}
 	#table-wrapper {
 		margin: 20% 20% 0 20%;
 		text-align: center;
