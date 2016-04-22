@@ -343,12 +343,13 @@ a {
 		line-height: 1.4;
 	}
 		#resume h4 {
-			margin: 0;
+			margin: 3em 0 2em 0;
 			font-size: 1.3em;
 		}
 		#resume ul {
 			list-style-type: circle;
-			margin-top: .5em
+			margin-top: 1em;
+			margin-bottom: 1em;
 		}
 		.title-block {
 			margin: .5em 0;
