@@ -352,9 +352,11 @@ a {
 		}
 		.title-block {
 			margin: .5em 0;
+			font-size: 1.2em;
 		}
 		.subheader {
 			color: #A0948E;
+			font-size: .9em;
 		}
 		.resume-block {
 			margin: 0 0 40px 0;
