@@ -394,26 +394,29 @@ a {
 		line-height: 1.4;
 	}
 		#resume h4 {
-			margin: 0;
+			margin: 3em 0 2em 0;
 			font-size: 1.3em;
 		}
 		#resume ul {
 			list-style-type: circle;
-			margin-top: .5em
+			margin-top: 1em;
+			margin-bottom: 1em;
 		}
 		.title-block {
 			margin: .5em 0;
+			font-size: 1.2em;
 		}
 		.subheader {
 			color: #A0948E;
+			font-size: .9em;
 		}
 		.resume-block {
 			margin: 0 0 40px 0;
 		}
-		.resume-block h3 {
-			display: inline;
-			margin-right: 4px;
-		}
+			.resume-block h3 {
+				display: inline;
+				margin-right: 4px;
+			}
 	#table-wrapper {
 		text-align: center;
 		font-family: sans-serif;
