@@ -375,8 +375,11 @@ a {
 		left: 0;
 	}
 }
-	#sidebar.ink, #sidebar.kenzie {
+	#sidebar.kenzie {
 		background: #534741;
+	}
+	#sidebar.ink {
+		background: #8172B0;
 	}
 		#sidebar.kenzie h2 {
 			color: #ffffff;
