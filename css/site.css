@@ -291,7 +291,6 @@ a {
 	font-family: "letter-gothic-std",source-sans-pro,sans-serif;
 	text-align: justify;
 	text-align: center;
-	font-weight: 300;
 }
 @media screen and (min-width: 800px) {
 	.links {
@@ -299,6 +298,7 @@ a {
 		padding: 0 20%;
 		max-width: 550px;
 		font-size: 1.2em;
+		font-weight: 300;
 	}
 	.links ul li {
 		margin: 0 9px;
