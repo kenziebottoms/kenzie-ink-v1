@@ -286,18 +286,22 @@ a {
 	}
 }
 .links {
-	padding: 0 20%;
+	width: 80%;
 	margin: 0 auto;
-	max-width: 550px;
 	font-family: "letter-gothic-std",source-sans-pro,sans-serif;
 	text-align: justify;
 	text-align: center;
 	font-weight: 300;
-	font-size: 1.2em;
 }
 @media screen and (min-width: 800px) {
 	.links {
 		min-width: 300px;
+		padding: 0 20%;
+		max-width: 550px;
+		font-size: 1.2em;
+	}
+	.links ul li {
+		margin: 0 9px;
 	}
 }
 	.links ul {
@@ -308,7 +312,7 @@ a {
 		text-align: justify;
 	}
 		.links ul li {
-			margin: 0 9px;
+			margin: 0 5px 0 0;
 			padding: 0;
 			display: inline-block;
 		}
@@ -324,23 +328,31 @@ a {
 	#back-block {
 		margin-top: 100px;
 	}
+	#back-block.ink {
+		padding-left: 30%;
+	}
+		#back-block.ink:hover {
+			padding-left: 15%;
+		}
+	#back-block.kenzie {
+		padding-right: 30%;
+		text-align: right;
+	}
+		#back-block.kenzie:hover {
+			padding-right: 15%;
+		}
 }
 	#back-block.ink {
 		background: #534741;
-		padding-left: 30%;
 	}
 		#back-block.ink:hover {	
-			padding-left: 15%;
 			color: #534741;
 			background: #fff;
 		}
 	#back-block.kenzie {
 		background: #8172B0;
-		padding-right: 30%;
-		text-align: right;
 	}
-		#back-block.kenzie:hover {	
-			padding-right: 15%;
+		#back-block.kenzie:hover {
 			color: #8172B0;
 			background: #fff;
 		}
