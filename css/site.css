@@ -291,7 +291,7 @@ a {
 	font-family: "letter-gothic-std",source-sans-pro,sans-serif;
 	text-align: justify;
 	text-align: center;
-	font-weight: normal;
+	font-weight: bold;
 }
 @media screen and (min-width: 800px) {
 	.links {
